@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head><title>login</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+input[type=text] {
+ background-color: grey;
+ border: solid;
+ color: black;
+ width:auto;
+ padding: 8px 52px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+}
+
+input[type=submit], input[type=reset] {
+ background-color: #4CAF50;
+ border: none;
+ color: white;
+ padding: 16px 32px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+ }
+</style>
+
+<body>
+<script>  
+function validate()  
+{  
+var x=document.login.email.value;
+
+var comment=document.login.comment.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (x==null || x=="")
+{
+  alert("Please Fill Valid Email");
+  return false;
+}
+else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Entered e-mail address is not Valid \n");  
+  return false;  
+  } 
+
+else if (comment==null || comment=="")
+{
+  alert("comment your view");
+  return false;
+}
+else{
+	alert("Successfully Submited");
+	return true;
+}
+
+}  
+</script>  
+<body>  
+<div class="container">
+<div class="row">
+<div class="col-md-1 col-xs-0 col-sm-0">
+</div>
+<div class="col-md-10 col-xs-12 col-sm-12">
+
+<form name="login"  method="post" onsubmit="return validate();">  
+<center>Email: <input type="text" name="email"><br/></center>  
+<center>Comment: <input type="text" name="comment"><br/>  </center>
+  
+<center><input type="submit" value="Regiter"/><input type="reset" value="Reset"></input></center>  
+</form>  
+</div>
+<div class="col-md-1 col-xs-0 col-sm-0"></div>
+</div>
+</div>
+
+</body>
+</html>
